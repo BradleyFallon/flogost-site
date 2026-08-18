@@ -1,0 +1,29 @@
+---
+import { spotifyPlaylist } from "../data/site";
+---
+
+<section class="listen-feature shell" id="listen" aria-labelledby="listen-title">
+  <div class="section-marker">
+    <span>02</span>
+    <p>Listen</p>
+  </div>
+  <div class="listen-copy">
+    <p class="eyebrow">{spotifyPlaylist.label}</p>
+    <h2 id="listen-title">Current<br />rotation.</h2>
+    <p>A living selection from the FLOGOST orbit—sounds feeding the next set, studio session, and descent.</p>
+    <a class="text-link" href={spotifyPlaylist.href} target="_blank" rel="noreferrer">
+      Open in Spotify <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <div class="spotify-player">
+    <iframe
+      title={`Spotify playlist: ${spotifyPlaylist.title}`}
+      src={spotifyPlaylist.embedUrl}
+      width="100%"
+      height="352"
+      allowfullscreen
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+    ></iframe>
+  </div>
+</section>

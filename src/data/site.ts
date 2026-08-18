@@ -7,12 +7,12 @@ export const event = {
   href: "events/root-and-resonance/",
 };
 
-export const musicLinks: Array<{
-  label: string;
-  title: string;
-  description: string;
-  href: string;
-}> = [];
+export const spotifyPlaylist = {
+  title: "FLOGOST exd aug2026",
+  label: "Playlist · August 2026",
+  href: "https://open.spotify.com/playlist/5bxpiqOb6SRh5R0E4xYNSm",
+  embedUrl: "https://open.spotify.com/embed/playlist/5bxpiqOb6SRh5R0E4xYNSm?utm_source=generator&theme=0",
+};
 
 export const socialLinks: Array<{
   label: string;

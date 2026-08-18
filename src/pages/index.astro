@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EventFeature from "../components/EventFeature.astro";
-import { musicLinks, socialLinks } from "../data/site";
+import SpotifyEmbed from "../components/SpotifyEmbed.astro";
+import { socialLinks } from "../data/site";
 
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
 ---
@@ -22,23 +23,10 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
   </section>
 
   <EventFeature />
-
-  {musicLinks.length > 0 && (
-    <section class="link-section shell" aria-labelledby="listen-title">
-      <div class="section-marker"><span>02</span><p>Listen</p></div>
-      <div class="link-list">
-        <h2 id="listen-title" class="visually-hidden">Listen to FLOGOST</h2>
-        {musicLinks.map((link) => (
-          <a href={link.href} target="_blank" rel="noreferrer">
-            <span>{link.label}</span><strong>{link.title}</strong><small>{link.description}</small><b aria-hidden="true">↗</b>
-          </a>
-        ))}
-      </div>
-    </section>
-  )}
+  <SpotifyEmbed />
 
   <section class="statement shell" id="about" aria-labelledby="about-title">
-    <div class="section-marker"><span>02</span><p>Manifesto</p></div>
+    <div class="section-marker"><span>03</span><p>Manifesto</p></div>
     <div>
       <p class="eyebrow">From below the surface</p>
       <h2 id="about-title">Pressure becomes motion.<br />Shadow becomes sound.</h2>
