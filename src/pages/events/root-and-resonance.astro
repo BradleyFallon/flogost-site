@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import cosmicHaunting from "../../assets/cosmic-haunting.webp";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { event } from "../../data/site";
+
+const homeUrl = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
+---
+
+<BaseLayout title={`${event.title} — FLOGOST`} description={`FLOGOST at ${event.title}, ${event.displayDate} in Portland, Oregon.`}>
+  <article class="event-page shell">
+    <a class="back-link" href={homeUrl}>← FLOGOST</a>
+    <div class="event-page-heading">
+      <p class="eyebrow">Next transmission · Portland</p>
+      <h1>{event.title}</h1>
+    </div>
+    <figure>
+      <Image src={cosmicHaunting} alt="Spectral figures gathering beneath a violet cosmic sky" />
+    </figure>
+    <div class="event-page-details">
+      <div><span>Date</span><p>{event.displayDate}, 2026</p></div>
+      <div><span>Venue</span><p>{event.location}</p></div>
+      <div><span>City</span><p>{event.city}</p></div>
+    </div>
+    <p class="event-note">FLOGOST enters the room for a first paid live DJ performance. More details will surface here.</p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EventFeature from "../components/EventFeature.astro";
+import { musicLinks, socialLinks } from "../data/site";
+
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-art" aria-hidden="true"></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-content shell">
+      <p class="kicker">Bass music · DJ · Producer</p>
+      <h1><span>Flow above</span><span>that which</span><span>haunts you.</span></h1>
+      <div class="hero-lower">
+        <p>FLOGOST</p>
+        <p>Portland, Oregon<br />Est. MMXXVI</p>
+      </div>
+    </div>
+    <a class="scroll-cue" href={`${base}#next`}><span>Descend</span><span aria-hidden="true">↓</span></a>
+  </section>
+
+  <EventFeature />
+
+  {musicLinks.length > 0 && (
+    <section class="link-section shell" aria-labelledby="listen-title">
+      <div class="section-marker"><span>02</span><p>Listen</p></div>
+      <div class="link-list">
+        <h2 id="listen-title" class="visually-hidden">Listen to FLOGOST</h2>
+        {musicLinks.map((link) => (
+          <a href={link.href} target="_blank" rel="noreferrer">
+            <span>{link.label}</span><strong>{link.title}</strong><small>{link.description}</small><b aria-hidden="true">↗</b>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="statement shell" id="about" aria-labelledby="about-title">
+    <div class="section-marker"><span>02</span><p>Manifesto</p></div>
+    <div>
+      <p class="eyebrow">From below the surface</p>
+      <h2 id="about-title">Pressure becomes motion.<br />Shadow becomes sound.</h2>
+      <p class="statement-copy">FLOGOST moves through the space between weight and release—bass music shaped in Portland, sent outward for dark rooms and open water.</p>
+      {socialLinks.length > 0 && (
+        <div class="social-links">{socialLinks.map((link) => <a href={link.href}>{link.label} ↗</a>)}</div>
+      )}
+    </div>
+  </section>
+
+  <section class="closing-image" aria-label="Ghosts moving through deep water">
+    <div class="closing-copy shell"><p>Flow forth</p><p>and be haunted.</p></div>
+  </section>
+</BaseLayout>

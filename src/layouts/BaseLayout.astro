@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "FLOGOST — Flow Above That Which Haunts You",
+  description = "FLOGOST is a Portland bass music, DJ, and producer project.",
+} = Astro.props;
+
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
+const pageUrl = (path = "") => `${base}${path.replace(/^\//, "")}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#05080d" />
+    <link rel="icon" href={pageUrl("favicon.svg")} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header shell">
+      <a class="wordmark" href={pageUrl()} aria-label="FLOGOST home">FLOGOST</a>
+      <nav aria-label="Main navigation">
+        <a href={pageUrl("#next")}>Next</a>
+        <a href={pageUrl("#about")}>About</a>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer shell">
+      <p class="wordmark">FLOGOST</p>
+      <div>
+        <p>Portland, Oregon</p>
+        <p>Flow forth and be haunted.</p>
+      </div>
+    </footer>
+  </body>
+</html>
