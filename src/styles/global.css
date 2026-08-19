@@ -42,7 +42,7 @@ a { color: inherit; }
 .scroll-cue { position: absolute; right: 4.5vw; bottom: 6.5vh; z-index: 2; display: grid; justify-items: center; gap: 1.3rem; color: var(--muted); font: 400 .61rem/1 "DM Mono", monospace; letter-spacing: .18em; text-decoration: none; text-transform: uppercase; }
 .scroll-cue span:first-child { writing-mode: vertical-rl; }
 
-.event-feature, .statement, .listen-feature { min-height: 88vh; padding-block: clamp(7rem, 13vw, 12rem); border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(130px, .55fr) 1.25fr 1fr; gap: clamp(2rem, 5vw, 6rem); align-items: center; }
+.event-feature, .statement, .listen-feature, .soundcloud-feature { min-height: 88vh; padding-block: clamp(7rem, 13vw, 12rem); border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(130px, .55fr) 1.25fr 1fr; gap: clamp(2rem, 5vw, 6rem); align-items: center; }
 .section-marker { align-self: start; display: flex; align-items: baseline; gap: 1rem; color: var(--muted); font: 400 .62rem/1 "DM Mono", monospace; letter-spacing: .18em; text-transform: uppercase; }
 .section-marker p { margin: 0; }
 .section-marker span { color: var(--glow); }
@@ -61,6 +61,13 @@ a { color: inherit; }
 .spotify-player { align-self: center; padding: 1rem; border: 1px solid var(--line); background: rgba(11, 19, 27, .62); box-shadow: 0 26px 80px rgba(0, 0, 0, .3); }
 .spotify-player iframe { display: block; border: 0; border-radius: 4px; filter: saturate(.62) brightness(.82); transition: filter .25s ease; }
 .spotify-player:hover iframe, .spotify-player:focus-within iframe { filter: saturate(.82) brightness(.92); }
+
+.soundcloud-feature { background: radial-gradient(circle at 40% 50%, rgba(69, 58, 111, .13), transparent 32%); }
+.soundcloud-copy h2 { margin: 0; font-size: clamp(3.1rem, 6vw, 7rem); font-weight: 300; letter-spacing: -.06em; line-height: .85; text-transform: uppercase; }
+.soundcloud-copy > p:not(.eyebrow) { max-width: 38ch; margin: 2.5rem 0; color: var(--muted); line-height: 1.7; }
+.soundcloud-player { padding: 1rem; border: 1px solid var(--line); background: rgba(11, 19, 27, .62); box-shadow: 0 26px 80px rgba(0, 0, 0, .3); }
+.soundcloud-player iframe { display: block; border: 0; filter: grayscale(.4) saturate(.65) brightness(.72); transition: filter .25s ease; }
+.soundcloud-player:hover iframe, .soundcloud-player:focus-within iframe { filter: grayscale(.18) saturate(.82) brightness(.86); }
 
 .statement { grid-template-columns: minmax(130px, .55fr) 2.25fr; background: radial-gradient(circle at 78% 52%, rgba(49,95,117,.13), transparent 34%); }
 .statement > div:last-child { max-width: 1020px; }
@@ -100,13 +107,13 @@ a { color: inherit; }
   .hero h1 span:nth-child(2) { padding-left: .15em; }
   .hero-lower { width: 100%; }
   .scroll-cue { display: none; }
-  .event-feature, .statement, .listen-feature { min-height: auto; grid-template-columns: 1fr; padding-block: 6.5rem; }
+  .event-feature, .statement, .listen-feature, .soundcloud-feature { min-height: auto; grid-template-columns: 1fr; padding-block: 6.5rem; }
   .section-marker { margin-bottom: 1rem; }
   .event-art { grid-row: 2; height: 56vh; }
   .event-content { grid-row: 3; }
   .event-content h2 { font-size: clamp(3.6rem, 17vw, 6.8rem); }
   .statement-copy { margin-left: 0; }
-  .spotify-player { margin-top: 1rem; padding: .65rem; }
+  .spotify-player, .soundcloud-player { margin-top: 1rem; padding: .65rem; }
   .closing-image { min-height: 72vh; }
   .site-footer { min-height: 260px; align-items: start; flex-direction: column; }
   .event-page { padding-top: 2rem; }

@@ -14,6 +14,13 @@ export const spotifyPlaylist = {
   embedUrl: "https://open.spotify.com/embed/playlist/5bxpiqOb6SRh5R0E4xYNSm?utm_source=generator&theme=0",
 };
 
+export const soundcloudProfile = {
+  title: "FLOGOST",
+  label: "Demos · SoundCloud",
+  href: "https://soundcloud.com/flogost",
+  embedUrl: "https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F1685275886&show_artwork=true&show_comments=false&hide_related=true&show_reposts=false",
+};
+
 export const socialLinks: Array<{
   label: string;
   href: string;

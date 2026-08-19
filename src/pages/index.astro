@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EventFeature from "../components/EventFeature.astro";
+import SoundCloudEmbed from "../components/SoundCloudEmbed.astro";
 import SpotifyEmbed from "../components/SpotifyEmbed.astro";
 import { socialLinks } from "../data/site";
 
@@ -24,9 +25,10 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
 
   <EventFeature />
   <SpotifyEmbed />
+  <SoundCloudEmbed />
 
   <section class="statement shell" id="about" aria-labelledby="about-title">
-    <div class="section-marker"><span>03</span><p>Manifesto</p></div>
+    <div class="section-marker"><span>04</span><p>Manifesto</p></div>
     <div>
       <p class="eyebrow">From below the surface</p>
       <h2 id="about-title">Pressure becomes motion.<br />Shadow becomes sound.</h2>
