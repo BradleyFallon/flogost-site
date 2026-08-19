@@ -73,7 +73,7 @@ a { color: inherit; }
 .statement > div:last-child { max-width: 1020px; }
 .statement h2 { max-width: 13ch; font-size: clamp(3.2rem, 7vw, 7.8rem); }
 .statement-copy { max-width: 46ch; margin: 3.2rem 0 0 auto; color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.3rem); line-height: 1.75; }
-.social-links { display: flex; justify-content: end; gap: 2rem; margin-top: 3rem; }
+.social-links { display: flex; flex-wrap: wrap; justify-content: end; gap: 2rem; margin-top: 3rem; }
 .social-links a { font: 400 .68rem/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: .14em; }
 
 .closing-image { min-height: 90vh; position: relative; display: grid; align-items: end; background: linear-gradient(180deg, var(--void), transparent 25%, transparent 67%, var(--void)), url("../assets/ghosts-below.webp") 50% 52% / cover no-repeat; filter: saturate(.55); }
@@ -113,6 +113,7 @@ a { color: inherit; }
   .event-content { grid-row: 3; }
   .event-content h2 { font-size: clamp(3.6rem, 17vw, 6.8rem); }
   .statement-copy { margin-left: 0; }
+  .social-links { justify-content: start; }
   .spotify-player, .soundcloud-player { margin-top: 1rem; padding: .65rem; }
   .closing-image { min-height: 72vh; }
   .site-footer { min-height: 260px; align-items: start; flex-direction: column; }

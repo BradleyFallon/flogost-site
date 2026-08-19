@@ -34,7 +34,9 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
       <h2 id="about-title">Pressure becomes motion.<br />Shadow becomes sound.</h2>
       <p class="statement-copy">FLOGOST moves through the space between weight and release—bass music shaped in Portland, sent outward for dark rooms and open water.</p>
       {socialLinks.length > 0 && (
-        <div class="social-links">{socialLinks.map((link) => <a href={link.href}>{link.label} ↗</a>)}</div>
+        <div class="social-links">
+          {socialLinks.map((link) => <a href={link.href} target="_blank" rel="noreferrer">{link.label} ↗</a>)}
+        </div>
       )}
     </div>
   </section>
