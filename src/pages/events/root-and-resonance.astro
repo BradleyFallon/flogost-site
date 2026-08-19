@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import cosmicHaunting from "../../assets/cosmic-haunting.webp";
+import eventFlyer from "../../assets/root-and-resonance-flyer.png";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { event } from "../../data/site";
 
@@ -14,14 +14,28 @@ const homeUrl = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
       <p class="eyebrow">Next transmission · Portland</p>
       <h1>{event.title}</h1>
     </div>
-    <figure>
-      <Image src={cosmicHaunting} alt="Spectral figures gathering beneath a violet cosmic sky" />
+    <figure class="event-page-flyer">
+      <Image src={eventFlyer} alt="Root & Resonance event flyer with schedule and venue details" />
     </figure>
     <div class="event-page-details">
-      <div><span>Date</span><p>{event.displayDate}, 2026</p></div>
-      <div><span>Venue</span><p>{event.location}</p></div>
-      <div><span>City</span><p>{event.city}</p></div>
+      <div><span>When</span><p>{event.displayDate}, 2026<br />{event.time}<br /><small>{event.doors}</small></p></div>
+      <div><span>Where</span><p>{event.location}<br /><small>{event.address}</small></p></div>
+      <div><span>Admission</span><p>{event.age}<br />{event.ticketPrice}<br /><small>No refunds · Free parking</small></p></div>
     </div>
-    <p class="event-note">FLOGOST enters the room for a first paid live DJ performance. More details will surface here.</p>
+    <div class="event-page-body">
+      <div>
+        <p class="eyebrow">Move · meet · dance · heal</p>
+        <p class="event-note">{event.description}</p>
+        <a class="ticket-link" href={event.ticketHref} target="_blank" rel="noreferrer">Get tickets on Eventbrite <span aria-hidden="true">↗</span></a>
+      </div>
+      <ol class="event-schedule" aria-label="Event schedule">
+        {event.schedule.map((item) => (
+          <li>
+            <time>{item.time}</time>
+            <div><strong>{item.title}</strong>{item.artist && <span>{item.artist}</span>}</div>
+          </li>
+        ))}
+      </ol>
+    </div>
   </article>
 </BaseLayout>
