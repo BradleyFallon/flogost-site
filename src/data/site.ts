@@ -24,4 +24,9 @@ export const soundcloudProfile = {
 export const socialLinks: Array<{
   label: string;
   href: string;
-}> = [];
+}> = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/flogost_music/",
+  },
+];
