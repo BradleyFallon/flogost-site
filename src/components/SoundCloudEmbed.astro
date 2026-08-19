@@ -1,0 +1,28 @@
+---
+import { soundcloudProfile } from "../data/site";
+---
+
+<section class="soundcloud-feature shell" id="soundcloud" aria-labelledby="soundcloud-title">
+  <div class="section-marker">
+    <span>03</span>
+    <p>SoundCloud</p>
+  </div>
+  <div class="soundcloud-player">
+    <iframe
+      title={`SoundCloud profile: ${soundcloudProfile.title}`}
+      src={soundcloudProfile.embedUrl}
+      width="100%"
+      height="450"
+      allow="autoplay; encrypted-media"
+      loading="lazy"
+    ></iframe>
+  </div>
+  <div class="soundcloud-copy">
+    <p class="eyebrow">{soundcloudProfile.label}</p>
+    <h2 id="soundcloud-title">Signals<br />in progress.</h2>
+    <p>Demos, sketches, and emerging tracks from the FLOGOST studio—heard before they find their final form.</p>
+    <a class="text-link" href={soundcloudProfile.href} target="_blank" rel="noreferrer">
+      Enter SoundCloud <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
