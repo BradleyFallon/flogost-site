@@ -1,10 +1,25 @@
 export const event = {
   title: "Root & Resonance",
-  date: "2026-08-21T19:00:00-07:00",
+  date: "2026-08-21T18:00:00-07:00",
   displayDate: "Friday, August 21",
+  time: "6:00–10:30 PM",
+  doors: "Doors at 5:30 PM",
   location: "Boedecker Cellars",
   city: "Portland, Oregon",
+  address: "2621 NW 30th Avenue, Portland, OR 97210",
+  age: "21+",
+  ticketPrice: "$23.18",
+  ticketHref: "https://www.eventbrite.com/e/root-resonance-tickets-1995023367597",
   href: "events/root-and-resonance/",
+  description:
+    "An evening of movement, music, community, and healing. No dance or yoga experience is needed.",
+  schedule: [
+    { time: "6:00 PM", title: "All-level yoga", artist: "Abby Flynn" },
+    { time: "7:00 PM", title: "Social hour" },
+    { time: "8:00 PM", title: "Bass", artist: "DJ FLOGOST" },
+    { time: "9:00 PM", title: "Bass", artist: "DJ Spencer Drew" },
+    { time: "10:00 PM", title: "Sound bath", artist: "Melanie" },
+  ],
 };
 
 export const spotifyPlaylist = {
