@@ -36,12 +36,7 @@ export const soundcloudProfile = {
   embedUrl: "https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F1685275886&show_artwork=true&show_comments=false&hide_related=true&show_reposts=false",
 };
 
-export const socialLinks: Array<{
-  label: string;
-  href: string;
-}> = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/flogost_music/",
-  },
-];
+export const instagramProfile = {
+  handle: "@flogost_music",
+  href: "https://www.instagram.com/flogost_music/",
+};
