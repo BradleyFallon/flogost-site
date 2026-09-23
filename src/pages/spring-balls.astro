@@ -1,0 +1,22 @@
+---
+import SpringBallsToy from "../components/SpringBallsToy.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/spring-balls.css";
+
+const homeUrl = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/`;
+---
+
+<BaseLayout
+  title="Spring Balls — FLOGOST"
+  description="A three-body spring motion instrument by FLOGOST. Shape the physics, save presets, and share the result."
+>
+  <article class="spring-page shell">
+    <a class="back-link" href={homeUrl}>← FLOGOST</a>
+    <header class="spring-page-intro">
+      <p class="eyebrow">A FLOGOST toy · Three bodies in motion</p>
+      <h1>Shape the<br />current.</h1>
+      <p>Spring Balls is a small physics instrument for making looping motion. Adjust the forces, trigger events, and save what emerges.</p>
+    </header>
+    <SpringBallsToy />
+  </article>
+</BaseLayout>

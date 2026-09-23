@@ -1,0 +1,119 @@
+<div class="spring-balls" data-spring-balls>
+  <section class="spring-stage-column" aria-label="Spring Balls animation">
+    <div class="spring-stage-frame">
+      <canvas class="spring-stage" width="800" height="800" role="img" aria-label="Three white circles moving between spring-loaded anchor points"></canvas>
+      <svg class="spring-anchors" viewBox="0 0 200 200" aria-hidden="true">
+        <circle r="3" cx="100" cy="100" />
+        <circle r="3" cx="100" cy="100" />
+        <circle r="3" cx="100" cy="100" />
+      </svg>
+      <div class="spring-stage-meta" aria-hidden="true"><span>03 bodies</span><span data-beat-label>Beat 000</span></div>
+    </div>
+    <div class="spring-transport">
+      <button class="spring-button spring-button-primary" type="button" data-action="pause">Pause</button>
+      <button class="spring-button" type="button" data-action="restart">Restart motion</button>
+      <button class="spring-button" type="button" data-action="rotate">Rotate now</button>
+      <button class="spring-button" type="button" data-action="scramble">Scramble</button>
+    </div>
+  </section>
+
+  <section class="spring-control-panel" aria-label="Spring Balls controls">
+    <div class="spring-panel-heading">
+      <div><p class="eyebrow">Interactive instrument</p><h2>Spring Balls</h2></div>
+      <p>Three bodies orbit, collide, and chase a rotating set of anchors. Shape the motion, then save it.</p>
+    </div>
+
+    <section class="spring-preset-panel" aria-labelledby="preset-heading">
+      <div class="spring-control-heading"><h3 id="preset-heading">Presets</h3><span data-preset-state>Orbit</span></div>
+      <label class="spring-field spring-field-wide">
+        <span>Load</span>
+        <select data-preset-select></select>
+      </label>
+      <div class="spring-save-row">
+        <label class="spring-field spring-field-wide">
+          <span>Name this setting</span>
+          <input type="text" maxlength="48" placeholder="My preset" data-preset-name />
+        </label>
+        <button class="spring-button spring-button-primary" type="button" data-action="save-preset">Save</button>
+      </div>
+      <div class="spring-preset-actions">
+        <button class="spring-button" type="button" data-action="share">Copy share link</button>
+        <button class="spring-button" type="button" data-action="export">Export JSON</button>
+        <button class="spring-button" type="button" data-action="import">Import JSON</button>
+        <button class="spring-button spring-button-danger" type="button" data-action="delete-preset" disabled>Delete saved</button>
+        <input class="visually-hidden" type="file" accept="application/json,.json" data-import-file tabindex="-1" aria-hidden="true" />
+      </div>
+      <p class="spring-status" role="status" aria-live="polite" data-status>Built-in preset loaded.</p>
+    </section>
+
+    <details class="spring-control-group" open>
+      <summary><span>Motion</span><span>Timing and rotation</span></summary>
+      <div class="spring-control-body">
+        <label class="spring-range"><span>Tempo</span><input type="range" min="20" max="300" step="1" data-setting="bpm" /><output data-output="bpm"></output></label>
+        <label class="spring-range"><span>Rotation</span><input type="range" min="0" max="360" step="1" data-setting="rotationDegrees" /><output data-output="rotationDegrees"></output></label>
+        <label class="spring-range"><span>Variance</span><input type="range" min="0" max="180" step="1" data-setting="rotationVariance" /><output data-output="rotationVariance"></output></label>
+        <label class="spring-toggle"><input type="checkbox" data-setting="autoBeat" /><span>Advance automatically</span></label>
+        <button class="spring-button" type="button" data-action="reverse">Direction: clockwise</button>
+      </div>
+    </details>
+
+    <details class="spring-control-group" open>
+      <summary><span>Moves</span><span>Events on the beat</span></summary>
+      <div class="spring-control-body spring-move-grid">
+        <fieldset class="spring-move">
+          <legend><label class="spring-toggle"><input type="checkbox" data-setting="scrambleEnabled" /><span>Scramble</span></label></legend>
+          <p>Two bodies exchange anchors.</p>
+          <label class="spring-field"><span>Beat pattern</span><input type="text" inputmode="numeric" data-pattern="scramblePattern" /></label>
+          <button class="spring-button" type="button" data-action="scramble">Trigger</button>
+        </fieldset>
+        <fieldset class="spring-move">
+          <legend><label class="spring-toggle"><input type="checkbox" data-setting="kickEnabled" /><span>Kick</span></label></legend>
+          <p>An outward velocity burst.</p>
+          <label class="spring-field"><span>Beat pattern</span><input type="text" inputmode="numeric" data-pattern="kickPattern" /></label>
+          <label class="spring-range spring-range-compact"><span>Strength</span><input type="range" min="0" max="500" step="5" data-setting="kickStrength" /><output data-output="kickStrength"></output></label>
+          <button class="spring-button" type="button" data-action="kick">Trigger</button>
+        </fieldset>
+        <fieldset class="spring-move">
+          <legend><label class="spring-toggle"><input type="checkbox" data-setting="breatheEnabled" /><span>Breathe</span></label></legend>
+          <p>The shared orbit expands and returns.</p>
+          <label class="spring-field"><span>Beat pattern</span><input type="text" inputmode="numeric" data-pattern="breathePattern" /></label>
+          <label class="spring-range spring-range-compact"><span>Amount</span><input type="range" min="-200" max="200" step="5" data-setting="breatheAmount" /><output data-output="breatheAmount"></output></label>
+          <button class="spring-button" type="button" data-action="breathe">Trigger</button>
+        </fieldset>
+        <fieldset class="spring-move">
+          <legend><label class="spring-toggle"><input type="checkbox" data-setting="inversionEnabled" /><span>Inversion</span></label></legend>
+          <p>Every body flips to its opposite target.</p>
+          <label class="spring-field"><span>Beat pattern</span><input type="text" inputmode="numeric" data-pattern="inversionPattern" /></label>
+          <button class="spring-button" type="button" data-action="inversion">Trigger</button>
+        </fieldset>
+      </div>
+    </details>
+
+    <details class="spring-control-group">
+      <summary><span>Physics</span><span>Springs, mass, and repulsion</span></summary>
+      <div class="spring-control-body">
+        <p class="spring-subheading">Triangle spring</p>
+        <label class="spring-range"><span>Stiffness</span><input type="range" min="5" max="400" step="1" data-setting="triangleStiffness" /><output data-output="triangleStiffness"></output></label>
+        <label class="spring-range"><span>Damping</span><input type="range" min="0" max="40" step="0.1" data-setting="triangleDamping" /><output data-output="triangleDamping"></output></label>
+        <label class="spring-range"><span>Inertia</span><input type="range" min="0.1" max="10" step="0.1" data-setting="triangleInertia" /><output data-output="triangleInertia"></output></label>
+        <p class="spring-subheading">Body spring</p>
+        <label class="spring-range"><span>Stiffness</span><input type="range" min="5" max="400" step="1" data-setting="ballStiffness" /><output data-output="ballStiffness"></output></label>
+        <label class="spring-range"><span>Damping</span><input type="range" min="0" max="40" step="0.1" data-setting="ballDamping" /><output data-output="ballDamping"></output></label>
+        <label class="spring-range"><span>Mass</span><input type="range" min="0.1" max="10" step="0.1" data-setting="ballMass" /><output data-output="ballMass"></output></label>
+        <label class="spring-range"><span>Repulsion</span><input type="range" min="0" max="800" step="5" data-setting="repulsion" /><output data-output="repulsion"></output></label>
+      </div>
+    </details>
+
+    <details class="spring-control-group">
+      <summary><span>Appearance</span><span>Trails and guides</span></summary>
+      <div class="spring-control-body">
+        <label class="spring-range"><span>Trail fade</span><input type="range" min="2" max="100" step="1" data-setting="trailFade" /><output data-output="trailFade"></output></label>
+        <label class="spring-toggle"><input type="checkbox" data-show-anchors /><span>Show anchor targets</span></label>
+      </div>
+    </details>
+  </section>
+</div>
+
+<script>
+  import "../scripts/spring-balls";
+</script>

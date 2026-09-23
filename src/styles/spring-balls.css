@@ -1,0 +1,98 @@
+.spring-page { padding-block: 3rem 8rem; }
+.spring-page > .back-link { display: inline-block; margin-bottom: clamp(7rem, 14vh, 11rem); }
+.spring-page-intro { display: grid; grid-template-columns: .72fr 1.5fr .8fr; gap: clamp(2rem, 5vw, 6rem); align-items: end; margin-bottom: clamp(5rem, 10vw, 9rem); }
+.spring-page-intro .eyebrow { align-self: start; margin: .6rem 0 0; }
+.spring-page-intro h1 { margin: 0; font-size: clamp(4rem, 8.6vw, 9.5rem); font-weight: 300; letter-spacing: -.065em; line-height: .78; text-transform: uppercase; }
+.spring-page-intro > p:last-child { max-width: 34ch; margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }
+
+.spring-balls { display: grid; grid-template-columns: minmax(360px, .92fr) minmax(480px, 1.08fr); gap: clamp(3rem, 6vw, 7rem); align-items: start; padding-top: 2rem; border-top: 1px solid var(--line); }
+.spring-stage-column { position: sticky; top: 2rem; min-width: 0; }
+.spring-stage-frame { position: relative; width: 100%; aspect-ratio: 1; overflow: hidden; border: 1px solid var(--line); background: #020407; box-shadow: 0 35px 100px rgba(0,0,0,.34); }
+.spring-stage-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; border: 1px solid rgba(255,255,255,.035); }
+.spring-stage, .spring-anchors { position: absolute; inset: 0; width: 100%; height: 100%; }
+.spring-anchors { pointer-events: none; }
+.spring-anchors circle { fill: none; stroke: var(--glow); stroke-width: .65; opacity: 0; transition: opacity .2s ease; }
+.spring-anchors.is-visible circle { opacity: .62; }
+.spring-stage-meta { position: absolute; inset: auto 1.2rem 1rem; display: flex; justify-content: space-between; color: rgba(241,244,243,.42); font: 400 .58rem/1 "DM Mono", monospace; letter-spacing: .16em; text-transform: uppercase; }
+.spring-transport { display: flex; flex-wrap: wrap; gap: .65rem; padding-top: 1rem; }
+
+.spring-control-panel { min-width: 0; }
+.spring-panel-heading { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: end; margin-bottom: 3rem; }
+.spring-panel-heading .eyebrow { margin-bottom: 1rem; }
+.spring-panel-heading h2 { margin: 0; font-size: clamp(3rem, 5vw, 5.8rem); font-weight: 300; letter-spacing: -.06em; line-height: .84; text-transform: uppercase; }
+.spring-panel-heading > p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+.spring-preset-panel { margin-bottom: 1rem; padding: 1.5rem; border: 1px solid rgba(168,236,255,.28); background: rgba(8,17,27,.76); }
+.spring-control-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1.25rem; }
+.spring-control-heading h3 { margin: 0; font: 400 .72rem/1 "DM Mono", monospace; letter-spacing: .18em; text-transform: uppercase; }
+.spring-control-heading span { color: var(--glow); font: 400 .62rem/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.spring-save-row { display: grid; grid-template-columns: 1fr auto; gap: .7rem; align-items: end; margin-top: 1rem; }
+.spring-preset-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.spring-status { min-height: 1.2em; margin: 1rem 0 0; color: var(--muted); font: 400 .61rem/1.5 "DM Mono", monospace; }
+
+.spring-control-group { border-top: 1px solid var(--line); }
+.spring-control-group:last-child { border-bottom: 1px solid var(--line); }
+.spring-control-group summary { display: flex; justify-content: space-between; gap: 2rem; padding: 1.35rem 0; cursor: pointer; list-style: none; }
+.spring-control-group summary::-webkit-details-marker { display: none; }
+.spring-control-group summary span:first-child { font: 400 .72rem/1 "DM Mono", monospace; letter-spacing: .16em; text-transform: uppercase; }
+.spring-control-group summary span:last-child { color: var(--muted); font-size: .78rem; }
+.spring-control-group summary::after { content: "+"; color: var(--glow); font: 400 .8rem/1 "DM Mono", monospace; }
+.spring-control-group[open] summary::after { content: "−"; }
+.spring-control-body { padding: .25rem 0 1.8rem; }
+.spring-subheading { margin: 1.6rem 0 .8rem; color: var(--glow); font: 400 .6rem/1 "DM Mono", monospace; letter-spacing: .15em; text-transform: uppercase; }
+
+.spring-field { display: grid; gap: .45rem; min-width: 0; }
+.spring-field > span, .spring-range > span { color: var(--muted); font: 400 .61rem/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.spring-field input, .spring-field select { width: 100%; min-width: 0; height: 2.55rem; padding: 0 .75rem; border: 1px solid var(--line); border-radius: 0; outline: none; background: #07101a; color: var(--ink); font: 400 .76rem/1 "DM Mono", monospace; }
+.spring-field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 14px) 50%, calc(100% - 10px) 50%; background-size: 4px 4px; background-repeat: no-repeat; }
+.spring-field input:focus, .spring-field select:focus { border-color: var(--glow); }
+.spring-field input[aria-invalid="true"] { border-color: #f59b9b; }
+
+.spring-range { display: grid; grid-template-columns: 8rem 1fr 4.5rem; gap: 1rem; align-items: center; min-height: 2.8rem; }
+.spring-range input[type="range"] { width: 100%; accent-color: var(--glow); }
+.spring-range output { color: var(--ink); font: 400 .64rem/1 "DM Mono", monospace; text-align: right; }
+.spring-toggle { display: inline-flex; align-items: center; gap: .7rem; color: var(--ink); font: 400 .68rem/1.4 "DM Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+.spring-toggle input { width: 1rem; height: 1rem; margin: 0; accent-color: var(--glow); }
+.spring-control-body > .spring-toggle { margin-top: .9rem; }
+
+.spring-move-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.spring-move { min-width: 0; margin: 0; padding: 1rem; border: 1px solid var(--line); }
+.spring-move legend { padding: 0 .4rem; }
+.spring-move p { min-height: 2.8em; margin: .4rem 0 1rem; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+.spring-move .spring-button { margin-top: .85rem; }
+.spring-range-compact { grid-template-columns: 4.5rem 1fr 3rem; gap: .5rem; margin-top: .75rem; }
+
+.spring-button { min-height: 2.55rem; padding: .72rem .9rem; border: 1px solid var(--line); border-radius: 0; background: rgba(8,17,27,.78); color: var(--ink); cursor: pointer; font: 400 .61rem/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+.spring-button:hover, .spring-button:focus-visible { border-color: var(--glow); outline: none; }
+.spring-button-primary { border-color: var(--glow); background: var(--ink); color: var(--void); }
+.spring-button-primary:hover, .spring-button-primary:focus-visible { background: var(--glow); }
+.spring-button-danger { color: #dda3a3; }
+.spring-button:disabled { cursor: not-allowed; opacity: .35; }
+
+@media (max-width: 980px) {
+  .spring-page-intro { grid-template-columns: 1fr 2fr; }
+  .spring-page-intro > p:last-child { grid-column: 2; }
+  .spring-balls { grid-template-columns: 1fr; }
+  .spring-stage-column { position: relative; top: auto; width: min(100%, 680px); margin-inline: auto; }
+}
+
+@media (max-width: 620px) {
+  .spring-page { padding-top: 2rem; }
+  .spring-page > .back-link { margin-bottom: 7rem; }
+  .spring-page-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .spring-page-intro .eyebrow, .spring-page-intro > p:last-child { grid-column: auto; }
+  .spring-page-intro h1 { font-size: clamp(3.6rem, 18vw, 6rem); }
+  .spring-balls { gap: 4.5rem; }
+  .spring-transport .spring-button { flex: 1 1 calc(50% - .65rem); }
+  .spring-panel-heading { grid-template-columns: 1fr; }
+  .spring-save-row { grid-template-columns: 1fr; }
+  .spring-save-row .spring-button { width: 100%; }
+  .spring-move-grid { grid-template-columns: 1fr; }
+  .spring-range { grid-template-columns: 6.5rem 1fr 4rem; gap: .6rem; }
+  .spring-control-group summary span:last-child { display: none; }
+  .spring-preset-panel { padding: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spring-anchors circle, .spring-button { transition: none; }
+}
